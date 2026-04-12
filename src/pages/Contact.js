@@ -50,15 +50,15 @@ const Contact = () => {
           <p className="text-xl text-gray-300">We'd love to hear from you! Reach out with any questions or to learn more about our children's ministry.</p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-green-primary/20 to-green-secondary/20 backdrop-blur-sm rounded-3xl p-8 border border-green-accent/30">
-              <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
+            <div className="bg-gradient-to-br from-green-primary/20 to-green-secondary/20 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-green-accent/30">
+              <h2 className="text-2xl font-bold text-white mb-4 sm:mb-6">Send us a Message</h2>
               
               {submitStatus && (
                 <motion.div
@@ -82,7 +82,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-navy-dark/50 border border-green-accent/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-accent/50 focus:border-green-accent transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-navy-dark/50 border border-green-accent/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-accent/50 focus:border-green-accent transition-all duration-300 text-sm sm:text-base"
                     placeholder="John Doe"
                   />
                 </div>
@@ -98,7 +98,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-navy-dark/50 border border-green-accent/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-accent/50 focus:border-green-accent transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-navy-dark/50 border border-green-accent/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-accent/50 focus:border-green-accent transition-all duration-300 text-sm sm:text-base"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -113,7 +113,7 @@ const Contact = () => {
                     value={formData.category}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-navy-dark/50 border border-green-accent/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-green-accent/50 focus:border-green-accent transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-navy-dark/50 border border-green-accent/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-green-accent/50 focus:border-green-accent transition-all duration-300 text-sm sm:text-base"
                   >
                     <option value="general" className="bg-navy-dark">General Inquiry</option>
                     <option value="appreciation" className="bg-navy-dark">Appreciation & Testimony</option>
@@ -149,7 +149,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-navy-dark/50 border border-light-blue/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-light-blue/50 focus:border-light-blue transition-all duration-300 resize-none"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-navy-dark/50 border border-light-blue/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-light-blue/50 focus:border-light-blue transition-all duration-300 resize-none text-sm sm:text-base"
                     placeholder="Tell us how we can help you..."
                   />
                 </div>
@@ -159,7 +159,7 @@ const Contact = () => {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-4 bg-green-accent text-navy-dark font-semibold rounded-xl hover:bg-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-green-accent text-navy-dark font-semibold rounded-xl hover:bg-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </motion.button>
@@ -175,13 +175,13 @@ const Contact = () => {
             className="space-y-8"
           >
             {/* Quick Contact Info */}
-            <div className="bg-gradient-to-br from-green-primary/20 to-green-secondary/20 backdrop-blur-sm rounded-3xl p-8 border border-green-accent/30">
-              <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
+            <div className="bg-gradient-to-br from-green-primary/20 to-green-secondary/20 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-green-accent/30">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Contact Information</h2>
               
               <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-accent/20 rounded-full flex items-center justify-center text-green-accent">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-accent/20 rounded-full flex items-center justify-center text-green-accent">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
@@ -191,9 +191,9 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-accent/20 rounded-full flex items-center justify-center text-green-accent">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-accent/20 rounded-full flex items-center justify-center text-green-accent">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
@@ -203,9 +203,9 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-accent/20 rounded-full flex items-center justify-center text-green-accent">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-accent/20 rounded-full flex items-center justify-center text-green-accent">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>

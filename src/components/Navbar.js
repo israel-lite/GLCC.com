@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -28,7 +33,7 @@ const Navbar = () => {
               <div className="w-8 h-8 bg-gradient-to-r from-light-blue to-soft-yellow rounded-full flex items-center justify-center">
                 <span className="text-navy-dark font-bold text-sm">GLC</span>
               </div>
-              <span className="text-white font-semibold text-lg">Glory Live Kids</span>
+              <span className="text-white font-semibold text-lg sm:text-xl">Glory Live Kids</span>
             </Link>
           </motion.div>
 
@@ -90,29 +95,38 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-navy-dark/95 backdrop-blur-md rounded-lg mt-2 p-4"
-          >
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  location.pathname === item.path
-                    ? 'text-light-blue'
-                    : 'text-gray-300 hover:text-white'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: 'auto' }}
+              exit={{ opacity: 0, y: -10, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden bg-navy-dark/95 backdrop-blur-md rounded-lg mt-2 p-4 overflow-hidden"
+            >
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    to={item.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
+                      location.pathname === item.path
+                        ? 'text-light-blue'
+                        : 'text-gray-300 hover:text-white'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
