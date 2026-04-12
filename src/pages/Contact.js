@@ -6,6 +6,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    category: 'general',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -103,8 +104,43 @@ const Contact = () => {
                 </div>
 
                 <div>
+                  <label htmlFor="category" className="block text-green-accent font-medium mb-2">
+                    Message Category *
+                  </label>
+                  <select
+                    id="category"
+                    name="category"
+                    value={formData.category}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-navy-dark/50 border border-green-accent/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-green-accent/50 focus:border-green-accent transition-all duration-300"
+                  >
+                    <option value="general" className="bg-navy-dark">General Inquiry</option>
+                    <option value="appreciation" className="bg-navy-dark">Appreciation & Testimony</option>
+                    <option value="help" className="bg-navy-dark">Request Help</option>
+                    <option value="report" className="bg-navy-dark">Report an Issue</option>
+                    <option value="volunteer" className="bg-navy-dark">Volunteer Interest</option>
+                    <option value="prayer" className="bg-navy-dark">Prayer Request</option>
+                    <option value="suggestion" className="bg-navy-dark">Suggestion</option>
+                    <option value="other" className="bg-navy-dark">Other</option>
+                  </select>
+                </div>
+
+                <div>
                   <label htmlFor="message" className="block text-green-accent font-medium mb-2">
                     Message *
+                    {formData.category === 'appreciation' && (
+                      <span className="ml-2 text-sm text-yellow-400">Share your positive experience!</span>
+                    )}
+                    {formData.category === 'help' && (
+                      <span className="ml-2 text-sm text-blue-400">How can we assist you?</span>
+                    )}
+                    {formData.category === 'report' && (
+                      <span className="ml-2 text-sm text-red-400">Please provide details</span>
+                    )}
+                    {formData.category === 'prayer' && (
+                      <span className="ml-2 text-sm text-purple-400">We're here to pray with you</span>
+                    )}
                   </label>
                   <textarea
                     id="message"
@@ -145,7 +181,9 @@ const Contact = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-green-accent/20 rounded-full flex items-center justify-center text-green-accent">
-                    ??
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
@@ -155,7 +193,9 @@ const Contact = () => {
 
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-green-accent/20 rounded-full flex items-center justify-center text-green-accent">
-                    ??
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Phone</p>
@@ -165,7 +205,10 @@ const Contact = () => {
 
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-green-accent/20 rounded-full flex items-center justify-center text-green-accent">
-                    ??
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Address</p>
@@ -199,9 +242,10 @@ const Contact = () => {
               <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
               <div className="flex space-x-4">
                 {[
-                  { name: 'Facebook', icon: '/images/facebook-icon.svg', color: 'bg-blue-600' },
-                  { name: 'Instagram', icon: '/images/instagram-icon.svg', color: 'bg-pink-600' },
-                  { name: 'YouTube', icon: '/images/youtube-icon.svg', color: 'bg-red-600' }
+                  { name: 'Facebook', icon: 'https://cdn-icons-png.flaticon.com/512/174/174848.png', color: 'bg-blue-600' },
+                  { name: 'Instagram', icon: 'https://cdn-icons-png.flaticon.com/512/2111/2111463.png', color: 'bg-pink-600' },
+                  { name: 'YouTube', icon: 'https://cdn-icons-png.flaticon.com/512/1384/1384060.png', color: 'bg-red-600' },
+                  { name: 'X', icon: 'https://cdn-icons-png.flaticon.com/512/5969/5969020.png', color: 'bg-black' }
                 ].map((social, index) => (
                   <motion.a
                     key={index}
@@ -213,9 +257,6 @@ const Contact = () => {
                       src={social.icon} 
                       alt={social.name}
                       className="w-6 h-6"
-                      onError={(e) => {
-                        e.target.src = `https://cdn-icons-png.flaticon.com/512/174/174848.png`;
-                      }}
                     />
                   </motion.a>
                 ))}
@@ -235,7 +276,7 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-white mb-6 text-center">Find Us</h3>
             <div className="aspect-video bg-gradient-to-br from-green-primary/20 to-green-secondary/20 rounded-2xl flex items-center justify-center border-2 border-dashed border-green-accent/30">
               <div className="text-center">
-                <div className="text-6xl mb-4">??</div>
+                <div className="text-6xl mb-4">📍</div>
                 <p className="text-gray-400">Interactive Map</p>
                 <p className="text-green-accent text-sm mt-2">Korinjo House, British America, Jos Plateau, Nigeria</p>
               </div>
