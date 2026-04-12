@@ -40,7 +40,7 @@ const Privacy = () => {
     }, 30);
 
     return () => clearInterval(typingInterval);
-  }, [currentSection]);
+  }, [currentSection, sections]);
   return (
     <div className="relative min-h-screen">
       <AnimatedStars />
