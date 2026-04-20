@@ -5,21 +5,21 @@ import AnimatedStars from '../components/AnimatedStars';
 const Terms = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentSection, setCurrentSection] = useState(0);
-  
-  const sections = [
-    { title: 'Guidelines and policies for participating in our children\'s ministry programs.' },
-    { title: 'Agreement to Terms', content: 'By participating in Glory Live Church Children\'s Ministry programs, you agree to comply with these Terms of Service.' },
-    { title: 'Registration and Participation', content: 'To participate in our children\'s ministry programs:' },
-    { title: 'Parent and Guardian Responsibilities', content: 'Parents and guardians are responsible for:' },
-    { title: 'Child Safety and Behavior', content: 'To ensure a safe and positive environment for all children:' },
-    { title: 'Health and Medical Policies', content: 'To protect the health of all children:' },
-    { title: 'Volunteer Requirements', content: 'All volunteers must:' },
-    { title: 'Photo and Media Release', content: 'By participating in our programs, you grant permission for:' },
-    { title: 'Emergency Procedures', content: 'In case of emergency:' },
-    { title: 'Changes to Terms', content: 'We may update these Terms of Service as needed.' }
-  ];
 
   useEffect(() => {
+    const sections = [
+      { title: 'Guidelines and policies for participating in our children\'s ministry programs.' },
+      { title: 'Agreement to Terms', content: 'By participating in Glory Live Church Children\'s Ministry programs, you agree to comply with these Terms of Service.' },
+      { title: 'Registration and Participation', content: 'To participate in our children\'s ministry programs:' },
+      { title: 'Parent and Guardian Responsibilities', content: 'Parents and guardians are responsible for:' },
+      { title: 'Child Safety and Behavior', content: 'To ensure a safe and positive environment for all children:' },
+      { title: 'Health and Medical Policies', content: 'To protect the health of all children:' },
+      { title: 'Volunteer Requirements', content: 'All volunteers must:' },
+      { title: 'Photo and Media Release', content: 'By participating in our programs, you grant permission for:' },
+      { title: 'Emergency Procedures', content: 'In case of emergency:' },
+      { title: 'Changes to Terms', content: 'We may update these Terms of Service as needed.' }
+    ];
+    
     const section = sections[currentSection];
     const textToType = section.title + (section.content ? ` ${section.content}` : '');
     let charIndex = 0;
@@ -40,7 +40,7 @@ const Terms = () => {
     }, 30);
 
     return () => clearInterval(typingInterval);
-  }, [currentSection, sections]);
+  }, [currentSection]);
   return (
     <div className="relative min-h-screen">
       <AnimatedStars />

@@ -5,21 +5,21 @@ import AnimatedStars from '../components/AnimatedStars';
 const Privacy = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentSection, setCurrentSection] = useState(0);
-  
-  const sections = [
-    { title: 'Your privacy is important to us.', subtitle: 'Learn how we protect your information.' },
-    { title: 'Information We Collect', content: 'At Glory Live Church Children\'s Ministry, we collect information to provide better services to our community:' },
-    { title: 'How We Use Your Information', content: 'We use the information we collect to:' },
-    { title: 'Information Sharing', content: 'We do not sell, rent, or trade your personal information.' },
-    { title: 'Data Security', content: 'We implement appropriate security measures to protect your personal information:' },
-    { title: 'Photos and Media', content: 'From time to time, we may take photos or videos during ministry activities for:' },
-    { title: 'Your Rights', content: 'You have the right to:' },
-    { title: 'Children\'s Privacy', content: 'Our ministry is specifically designed for children, and we take extra precautions:' },
-    { title: 'Contact Information', content: 'If you have questions about this Privacy Policy or need to exercise your rights, please contact us:' },
-    { title: 'Policy Updates', content: 'We may update this Privacy Policy from time to time.' }
-  ];
 
   useEffect(() => {
+    const sections = [
+      { title: 'Your privacy is important to us.', subtitle: 'Learn how we protect your information.' },
+      { title: 'Information We Collect', content: 'At Glory Live Church Children\'s Ministry, we collect information to provide better services to our community:' },
+      { title: 'How We Use Your Information', content: 'We use the information we collect to:' },
+      { title: 'Information Sharing', content: 'We do not sell, rent, or trade your personal information.' },
+      { title: 'Data Security', content: 'We implement appropriate security measures to protect your personal information:' },
+      { title: 'Photos and Media', content: 'From time to time, we may take photos or videos during ministry activities for:' },
+      { title: 'Your Rights', content: 'You have the right to:' },
+      { title: 'Children\'s Privacy', content: 'Our ministry is specifically designed for children, and we take extra precautions:' },
+      { title: 'Contact Information', content: 'If you have questions about this Privacy Policy or need to exercise your rights, please contact us:' },
+      { title: 'Policy Updates', content: 'We may update this Privacy Policy from time to time.' }
+    ];
+    
     const section = sections[currentSection];
     const textToType = section.title + (section.subtitle ? ` ${section.subtitle}` : '') + (section.content ? ` ${section.content}` : '');
     let charIndex = 0;
@@ -40,7 +40,7 @@ const Privacy = () => {
     }, 30);
 
     return () => clearInterval(typingInterval);
-  }, [currentSection, sections]);
+  }, [currentSection]);
   return (
     <div className="relative min-h-screen">
       <AnimatedStars />
