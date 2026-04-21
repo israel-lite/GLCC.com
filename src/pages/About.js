@@ -5,42 +5,42 @@ import AnimatedStars from '../components/AnimatedStars';
 const About = () => {
   const teachers = [
     {
-      name: "Aunti Chisoume",
+      name: "Min. Chisom",
       role: "Lead Teacher",
       experience: "8 years",
       bio: "Passionate about teaching children about God's love through creative storytelling and interactive activities.",
       image: "/images/teacher-chisoume.jpg"
     },
     {
-      name: "Aunti Ife",
+      name: "Min. Ife",
       role: "Music & Worship",
       experience: "5 years",
       bio: "Brings joy through music and helps children express their faith through songs and praise.",
       image: "/images/teacher-ife.jpg"
     },
     {
-      name: "Aunti Jedidaya",
+      name: "Min. Jedidiah",
       role: "Arts & Crafts",
       experience: "6 years",
       bio: "Creates beautiful craft projects that reinforce biblical lessons and encourage creativity.",
       image: "/images/teacher-jedidaya.jpg"
     },
     {
-      name: "Aunti Peace",
+      name: "Min. Peace",
       role: "Games & Activities",
       experience: "4 years",
       bio: "Organizes fun games and activities that teach teamwork and biblical values.",
       image: "/images/teacher-peace.jpg"
     },
     {
-      name: "Uncle Peter",
+      name: "Min. Peter",
       role: "Storytelling",
       experience: "7 years",
       bio: "Brings Bible stories to life with engaging narratives and interactive storytelling.",
       image: "/images/teacher-peter.jpg"
     },
     {
-      name: "Aunti Christable",
+      name: "Min. Christable",
       role: "Youth Mentor",
       experience: "3 years",
       bio: "Guides older children in their faith journey and helps them develop leadership skills.",

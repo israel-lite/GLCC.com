@@ -18,9 +18,17 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl font-bold text-light-blue mb-4">GLCC</h3>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-light-blue to-soft-yellow rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-navy-dark font-bold text-sm">LBC</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Life Builder's</h3>
+                  <p className="text-light-blue text-sm -mt-1">City Church</p>
+                </div>
+              </div>
               <p className="text-gray-300 mb-4">
-                Glory Live Church Children's Ministry - Where faith meets fun!
+                Children's Ministry - Where faith meets fun!
               </p>
               <div className="space-y-2">
                 <p className="text-gray-400 text-sm">
@@ -84,7 +92,7 @@ const Footer = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <p className="text-gray-300 text-sm">childrens@glorylivechurch.com</p>
+                  <p className="text-gray-300 text-sm">childrens@lifebuilderscitychurch.org</p>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-light-blue/20 rounded-full flex items-center justify-center text-light-blue text-sm">
@@ -92,7 +100,11 @@ const Footer = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                  <p className="text-gray-300 text-sm">(123) 456-7890</p>
+                  <div className="text-gray-300 text-sm">
+                    <a href="tel:+2347039285363" className="hover:text-light-blue transition-colors">+234 703 928 5363</a>
+                    <br />
+                    <a href="tel:+2347037804874" className="hover:text-light-blue transition-colors">+234 703 780 4874</a>
+                  </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-light-blue/20 rounded-full flex items-center justify-center text-light-blue text-sm">
@@ -152,7 +164,7 @@ const Footer = () => {
           >
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm mb-4 md:mb-0">
-                © {currentYear} Glory Live Church Children's Ministry. All rights reserved.
+                © {currentYear} Life Builder's City Church Children's Ministry. All rights reserved.
               </p>
               <div className="flex space-x-6 text-sm">
                 <Link to="/privacy" className="text-gray-400 hover:text-light-blue transition-colors duration-300">

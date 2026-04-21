@@ -169,30 +169,34 @@ const Gallery = () => {
           className="max-w-7xl mx-auto mb-20"
         >
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Photo Memories</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {galleryImages.map((image, index) => (
               <motion.div
                 key={image.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                whileHover={{ scale: 1.05 }}
-                className="relative group cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-pink-primary/20 to-orange-accent/20 border border-pink-secondary/30"
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="relative group cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-br from-navy-medium/50 to-navy-dark/50 border border-light-blue/20 hover:border-light-blue/40 transition-all duration-300 shadow-lg hover:shadow-2xl"
                 onClick={() => setSelectedImage(image)}
               >
                 {/* Placeholder for image */}
-                <div className="aspect-square bg-gradient-to-br from-pink-primary/20 to-orange-accent/20 flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <div className="text-6xl mb-2">??</div>
-                    <p className="text-white font-medium">{image.title}</p>
+                <div className="aspect-[4/3] bg-gradient-to-br from-light-blue/20 to-soft-yellow/20 flex items-center justify-center">
+                  <div className="text-center p-6">
+                    <div className="text-7xl mb-3">??</div>
+                    <p className="text-white font-semibold text-lg">{image.title}</p>
                   </div>
                 </div>
                 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-navy-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
-                  <div className="text-center">
-                    <h3 className="text-white font-semibold mb-2">{image.title}</h3>
-                    <p className="text-orange-accent text-sm">{image.description}</p>
+                {/* Enhanced hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-white font-bold text-xl mb-2">{image.title}</h3>
+                    <p className="text-light-blue text-sm">{image.description}</p>
+                    <div className="mt-3 flex items-center space-x-2">
+                      <span className="px-3 py-1 bg-light-blue/20 rounded-full text-xs text-light-blue font-medium">{image.category}</span>
+                      <span className="text-gray-400 text-xs">Click to view</span>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -208,35 +212,43 @@ const Gallery = () => {
           className="max-w-7xl mx-auto mb-20"
         >
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Video Gallery</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {videos.map((video, index) => (
               <motion.div
                 key={video.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                whileHover={{ scale: 1.05 }}
-                className="relative group cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-pink-primary/20 to-orange-accent/20 border border-pink-secondary/30"
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="relative group cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-br from-navy-medium/50 to-navy-dark/50 border border-light-blue/20 hover:border-light-blue/40 transition-all duration-300 shadow-lg hover:shadow-2xl"
               >
                 {/* Video thumbnail placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-pink-primary/20 to-orange-accent/20 flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <div className="text-5xl mb-2">??</div>
-                    <p className="text-white font-medium text-sm">{video.title}</p>
+                <div className="aspect-video bg-gradient-to-br from-purple/20 to-pink/20 flex items-center justify-center">
+                  <div className="text-center p-6">
+                    <div className="text-6xl mb-3">??</div>
+                    <p className="text-white font-semibold">{video.title}</p>
                   </div>
                 </div>
                 
-                {/* Play button overlay */}
-                <div className="absolute inset-0 bg-navy-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-16 h-16 bg-pink-secondary rounded-full flex items-center justify-center">
-                    <div className="w-0 h-0 border-l-[12px] border-l-white border-y-[8px] border-y-transparent ml-1"></div>
+                {/* Enhanced play button overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                  <div className="transform scale-0 group-hover:scale-100 transition-transform duration-500">
+                    <div className="w-20 h-20 bg-gradient-to-r from-light-blue to-soft-yellow rounded-full flex items-center justify-center shadow-2xl">
+                      <div className="w-0 h-0 border-l-[16px] border-l-navy-dark border-y-[10px] border-y-transparent ml-2"></div>
+                    </div>
                   </div>
                 </div>
                 
-                {/* Video info */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-navy-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-white font-semibold text-sm">{video.title}</h3>
-                  <p className="text-orange-accent text-xs">{video.description}</p>
+                {/* Enhanced video info */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-navy-dark/95 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-white font-bold text-lg mb-2">{video.title}</h3>
+                    <p className="text-light-blue text-sm">{video.description}</p>
+                    <div className="mt-3 flex items-center space-x-2">
+                      <span className="px-3 py-1 bg-soft-yellow/20 rounded-full text-xs text-soft-yellow font-medium">Video</span>
+                      <span className="text-gray-400 text-xs">Click to play</span>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -253,38 +265,46 @@ const Gallery = () => {
           <h2 className="text-3xl font-bold text-white mb-4 text-center">Our Amazing Children</h2>
           <p className="text-center text-gray-300 mb-8">Watch our talented children share their faith and creativity</p>
           
-          <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {childrenVideos.map((childVideo, index) => (
               <motion.div
                 key={childVideo.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                whileHover={{ scale: 1.03, y: -5 }}
-                className="relative group cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-br from-pink-primary/20 to-orange-accent/20 border border-pink-secondary/30 hover:border-pink-secondary/50 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="relative group cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-br from-navy-medium/50 to-navy-dark/50 border border-light-blue/20 hover:border-light-blue/40 transition-all duration-300 shadow-lg hover:shadow-2xl"
               >
                 {/* Video thumbnail */}
-                <div className="aspect-video bg-gradient-to-br from-pink-primary/20 to-orange-accent/20 flex items-center justify-center">
+                <div className="aspect-[4/3] bg-gradient-to-br from-green/20 to-blue/20 flex items-center justify-center">
                   <div className="text-center p-6">
-                    <div className="w-20 h-20 bg-gradient-to-r from-pink-primary to-pink-secondary rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                    <div className="w-24 h-24 bg-gradient-to-r from-light-blue to-soft-yellow rounded-full flex items-center justify-center text-4xl mb-4 mx-auto shadow-lg">
                       ?
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">{childVideo.childName}</h3>
-                    <p className="text-orange-accent font-medium">{childVideo.title}</p>
+                    <p className="text-light-blue font-medium">{childVideo.title}</p>
                   </div>
                 </div>
                 
-                {/* Play button overlay */}
-                <div className="absolute inset-0 bg-navy-dark/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-20 h-20 bg-pink-secondary rounded-full flex items-center justify-center">
-                    <div className="w-0 h-0 border-l-[16px] border-l-white border-y-[10px] border-y-transparent ml-2"></div>
+                {/* Enhanced play button overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                  <div className="transform scale-0 group-hover:scale-100 transition-transform duration-500">
+                    <div className="w-24 h-24 bg-gradient-to-r from-light-blue to-soft-yellow rounded-full flex items-center justify-center shadow-2xl">
+                      <div className="w-0 h-0 border-l-[20px] border-l-navy-dark border-y-[12px] border-y-transparent ml-3"></div>
+                    </div>
                   </div>
                 </div>
                 
-                {/* Video info overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-navy-dark/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-white font-bold text-lg mb-2">{childVideo.childName}'s Video</h3>
-                  <p className="text-orange-accent text-sm">{childVideo.description}</p>
+                {/* Enhanced video info overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-navy-dark/95 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-white font-bold text-lg mb-2">{childVideo.childName}'s Video</h3>
+                    <p className="text-light-blue text-sm mb-3">{childVideo.description}</p>
+                    <div className="flex items-center space-x-2">
+                      <span className="px-3 py-1 bg-soft-yellow/20 rounded-full text-xs text-soft-yellow font-medium">Featured</span>
+                      <span className="text-gray-400 text-xs">Click to watch</span>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}

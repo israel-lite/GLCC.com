@@ -1,7 +1,8 @@
 {
-  "name": "glory-live-childrens-ministry",
+  "name": "life-builders-city-church-childrens-ministry",
   "version": "1.0.0",
   "private": true,
+  "description": "Life Builder's City Church Children's Ministry - Where faith meets fun",
     "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",

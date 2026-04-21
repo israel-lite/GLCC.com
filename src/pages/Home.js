@@ -99,7 +99,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
           >
-            Welcome to Glory Live Church
+            Welcome to Life Builder's City Church
             <span className="block bg-gradient-to-r from-light-blue to-soft-yellow bg-clip-text text-transparent">Children's Ministry</span>
             <span className="text-5xl md:text-6xl lg:text-7xl mt-2 inline-block">{" "}</span>
           </motion.h1>
@@ -135,21 +135,238 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Verse of the Week Section */}
+      {/* Children Image Section */}
       <section className="relative z-10 py-20 px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center"
+          transition={{ duration: 0.8 }}
+          className="max-w-6xl mx-auto"
         >
-          <div className="bg-navy-medium/50 backdrop-blur-sm rounded-3xl p-8 border border-light-blue/20">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-light-blue to-soft-yellow bg-clip-text text-transparent mb-4">Verse of the Week</h2>
-            <p className="text-xl text-white italic mb-2">
-              "Let the little children come to me, and do not hinder them, for the kingdom of heaven belongs to such as these."
-            </p>
-            <p className="text-gray-400">Matthew 19:14</p>
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-3xl md:text-4xl font-bold text-white mb-4"
+            >
+              Our <span className="bg-gradient-to-r from-light-blue to-soft-yellow bg-clip-text text-transparent">Amazing Children</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-gray-300 max-w-2xl mx-auto"
+            >
+              See the joy and excitement as our children learn, grow, and have fun in their faith journey
+            </motion.p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Learning Together",
+                description: "Children engaged in Bible study and activities",
+                emoji: "👥",
+                gradient: "from-blue-500/20 to-purple-500/20"
+              },
+              {
+                title: "Creative Worship",
+                description: "Expressing faith through arts and music",
+                emoji: "🎨",
+                gradient: "from-yellow-500/20 to-orange-500/20"
+              },
+              {
+                title: "Fun & Friendship",
+                description: "Building lasting friendships in God's love",
+                emoji: "🌟",
+                gradient: "from-green-500/20 to-teal-500/20"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy-medium/50 to-navy-dark/50 border border-light-blue/20 hover:border-light-blue/40 transition-all duration-300 backdrop-blur-sm"
+              >
+                <div className={`aspect-video bg-gradient-to-br ${item.gradient} flex items-center justify-center`}>
+                  <div className="text-center p-6">
+                    <div className="text-6xl mb-4">{item.emoji}</div>
+                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-gray-300 text-sm">{item.description}</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-2 h-2 bg-light-blue rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-soft-yellow rounded-full animate-pulse delay-75"></div>
+                    <div className="w-2 h-2 bg-light-blue rounded-full animate-pulse delay-150"></div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Enhanced Bible Verse Section */}
+      <section className="relative z-10 py-20 px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="relative bg-gradient-to-br from-navy-medium/60 to-navy-dark/60 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-light-blue/30 shadow-2xl overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-light-blue via-soft-yellow to-light-blue"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-light-blue/10 to-soft-yellow/10 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-soft-yellow/10 to-light-blue/10 rounded-full blur-2xl"></div>
+            
+            <div className="relative z-10 text-center">
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="w-16 h-16 bg-gradient-to-r from-light-blue to-soft-yellow rounded-full flex items-center justify-center text-2xl mx-auto mb-6"
+              >
+                📖
+              </motion.div>
+              
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-light-blue to-soft-yellow bg-clip-text text-transparent mb-6"
+              >
+                Verse of the Week
+              </motion.h2>
+              
+              <motion.blockquote
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-xl md:text-2xl text-white italic mb-4 leading-relaxed"
+              >
+                "Let the little children come to me, and do not hinder them, for the kingdom of heaven belongs to such as these."
+              </motion.blockquote>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="text-lg text-gray-300 font-medium"
+              >
+                Matthew 19:14
+              </motion.p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Video Section */}
+      <section className="relative z-10 py-20 px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-6xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-3xl md:text-4xl font-bold text-white mb-4"
+            >
+              Watch Our <span className="bg-gradient-to-r from-light-blue to-soft-yellow bg-clip-text text-transparent">Latest Services</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-gray-300 max-w-2xl mx-auto"
+            >
+              Experience the joy and excitement of our children's ministry through our video highlights
+            </motion.p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              className="relative group overflow-hidden rounded-3xl bg-gradient-to-br from-navy-medium/50 to-navy-dark/50 border border-light-blue/20 hover:border-light-blue/40 transition-all duration-300"
+            >
+              <div className="aspect-video bg-gradient-to-br from-purple/20 to-pink/20 flex items-center justify-center">
+                <div className="text-center p-8">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-20 h-20 bg-gradient-to-r from-light-blue to-soft-yellow rounded-full flex items-center justify-center text-3xl mb-6 mx-auto cursor-pointer"
+                  >
+                    ▶️
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-white mb-2">Sunday Service Highlights</h3>
+                  <p className="text-gray-300 text-sm">Join us for an amazing time of worship and learning</p>
+                </div>
+              </div>
+              
+              <div className="absolute inset-0 bg-navy-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center mb-4">
+                    <div className="w-0 h-0 border-l-[12px] border-l-navy-dark border-y-[8px] border-y-transparent ml-1"></div>
+                  </div>
+                  <p className="text-white font-semibold">Play Video</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              whileHover={{ scale: 1.02 }}
+              className="relative group overflow-hidden rounded-3xl bg-gradient-to-br from-navy-medium/50 to-navy-dark/50 border border-light-blue/20 hover:border-light-blue/40 transition-all duration-300"
+            >
+              <div className="aspect-video bg-gradient-to-br from-blue/20 to-green/20 flex items-center justify-center">
+                <div className="text-center p-8">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-20 h-20 bg-gradient-to-r from-soft-yellow to-light-blue rounded-full flex items-center justify-center text-3xl mb-6 mx-auto cursor-pointer"
+                  >
+                    🎬
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-white mb-2">Special Events</h3>
+                  <p className="text-gray-300 text-sm">Celebrating our children's achievements and milestones</p>
+                </div>
+              </div>
+              
+              <div className="absolute inset-0 bg-navy-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center mb-4">
+                    <div className="w-0 h-0 border-l-[12px] border-l-navy-dark border-y-[8px] border-y-transparent ml-1"></div>
+                  </div>
+                  <p className="text-white font-semibold">Play Video</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </section>
@@ -199,6 +416,102 @@ const Home = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2 text-center">{activity.title}</h3>
                 <p className="text-gray-300 text-center">{activity.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Leaders/Teachers Section */}
+      <section className="relative z-10 py-20 px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-6xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-3xl md:text-4xl font-bold text-white mb-4"
+            >
+              Meet Our <span className="bg-gradient-to-r from-light-blue to-soft-yellow bg-clip-text text-transparent">Dedicated Leaders</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-gray-300 max-w-2xl mx-auto"
+            >
+              Our passionate teachers and leaders who nurture and guide our children in their faith journey
+            </motion.p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {[
+              {
+                name: "Min. Ife",
+                role: "Children's Pastor",
+                emoji: "👩‍🏫",
+                gradient: "from-blue-500/20 to-purple-500/20"
+              },
+              {
+                name: "Min. Chisom",
+                role: "Sunday School Teacher",
+                emoji: "👨‍🏫",
+                gradient: "from-green-500/20 to-teal-500/20"
+              },
+              {
+                name: "Min. Gift",
+                role: "Worship Leader",
+                emoji: "👩‍🎤",
+                gradient: "from-yellow-500/20 to-orange-500/20"
+              },
+              {
+                name: "Min. Jedidiah",
+                role: "Activities Coordinator",
+                emoji: "👨‍🎨",
+                gradient: "from-pink-500/20 to-red-500/20"
+              }
+            ].map((leader, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="relative group cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-br from-navy-medium/50 to-navy-dark/50 border border-light-blue/20 hover:border-light-blue/40 transition-all duration-300 shadow-lg hover:shadow-2xl"
+              >
+                <div className="aspect-square bg-gradient-to-br from-light-blue/20 to-soft-yellow/20 flex items-center justify-center">
+                  <div className="text-center p-6">
+                    <div className={`w-20 h-20 bg-gradient-to-r ${leader.gradient} rounded-full flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg`}>
+                      {leader.emoji}
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-1">{leader.name}</h3>
+                    <p className="text-light-blue text-sm">{leader.role}</p>
+                  </div>
+                </div>
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 text-center w-full">
+                    <h3 className="text-white font-bold text-lg mb-1">{leader.name}</h3>
+                    <p className="text-light-blue text-sm mb-3">{leader.role}</p>
+                    <div className="flex justify-center space-x-2">
+                      <div className="w-8 h-8 bg-light-blue/20 rounded-full flex items-center justify-center">
+                        <span className="text-xs">💬</span>
+                      </div>
+                      <div className="w-8 h-8 bg-soft-yellow/20 rounded-full flex items-center justify-center">
+                        <span className="text-xs">📧</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

@@ -29,11 +29,15 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-light-blue to-soft-yellow rounded-full flex items-center justify-center">
-                <span className="text-navy-dark font-bold text-sm">GLC</span>
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-light-blue to-soft-yellow rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-navy-dark font-bold text-sm">LBC</span>
               </div>
-              <span className="text-white font-semibold text-lg sm:text-xl">Glory Live Kids</span>
+              <div className="hidden sm:block">
+                <span className="text-white font-bold text-lg">Life Builder's</span>
+                <span className="text-light-blue font-semibold text-sm block -mt-1">City Church</span>
+              </div>
+              <span className="sm:hidden text-white font-semibold text-lg">LBC Kids</span>
             </Link>
           </motion.div>
 

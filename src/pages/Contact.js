@@ -187,7 +187,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
-                    <p className="text-white font-medium">childrens@glorylivechurch.com</p>
+                    <p className="text-white font-medium">childrens@lifebuilderscitychurch.org</p>
                   </div>
                 </div>
 
@@ -199,7 +199,10 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Phone</p>
-                    <p className="text-white font-medium">(123) 456-7890</p>
+                    <div className="space-y-1">
+                      <a href="tel:+2347039285363" className="text-white font-medium hover:text-green-accent transition-colors duration-300">+234 703 928 5363</a>
+                      <a href="tel:+2347037804874" className="text-white font-medium hover:text-green-accent transition-colors duration-300 block">+234 703 780 4874</a>
+                    </div>
                   </div>
                 </div>
 
@@ -274,11 +277,59 @@ const Contact = () => {
         >
           <div className="bg-gradient-to-br from-green-primary/20 to-green-secondary/20 backdrop-blur-sm rounded-3xl p-8 border border-green-accent/30">
             <h3 className="text-2xl font-bold text-white mb-6 text-center">Find Us</h3>
-            <div className="aspect-video bg-gradient-to-br from-green-primary/20 to-green-secondary/20 rounded-2xl flex items-center justify-center border-2 border-dashed border-green-accent/30">
-              <div className="text-center">
-                <div className="text-6xl mb-4">📍</div>
-                <p className="text-gray-400">Interactive Map</p>
-                <p className="text-green-accent text-sm mt-2">Korinjo House, British America, Jos Plateau, Nigeria</p>
+            <div className="space-y-4">
+              {/* Static Map Image */}
+              <div className="aspect-video rounded-2xl overflow-hidden border-2 border-green-accent/30 relative bg-gradient-to-br from-green-primary/10 to-green-secondary/10">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-32 h-32 bg-gradient-to-br from-green-accent/20 to-green-primary/20 rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl">
+                      <div className="text-6xl">📍</div>
+                    </div>
+                    <h4 className="text-2xl font-bold text-white mb-3">Korinjo House</h4>
+                    <p className="text-green-accent font-medium mb-2">British America, Jos Plateau</p>
+                    <p className="text-gray-300 text-sm">Nigeria</p>
+                    <div className="mt-6 flex items-center justify-center space-x-4">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-green-accent rounded-full animate-pulse"></div>
+                        <span className="text-green-accent text-sm font-medium">You're here!</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Map Pattern Overlay */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="grid grid-cols-8 grid-rows-6 h-full">
+                    {Array.from({ length: 48 }).map((_, i) => (
+                      <div key={i} className="border border-green-accent/20"></div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Directions Button */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Korinjo+House,+British+America,+Jos+Plateau,+Nigeria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-green-accent to-green-secondary text-white font-semibold rounded-xl hover:from-white hover:to-green-accent hover:text-navy-dark transition-all duration-300 text-center shadow-lg hover:shadow-xl"
+                >
+                  🧭 Get Directions
+                </motion.a>
+                
+                <motion.a
+                  href="https://www.google.com/maps/search/?api=1&query=Glory+Live+Church+Jos+Nigeria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-green-primary to-green-accent text-white font-semibold rounded-xl hover:from-white hover:to-green-primary hover:text-navy-dark transition-all duration-300 text-center shadow-lg hover:shadow-xl"
+                >
+                  🗺 View on Google Maps
+                </motion.a>
               </div>
             </div>
           </div>
